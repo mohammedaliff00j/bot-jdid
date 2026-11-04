@@ -83,8 +83,12 @@ def add_banned_id(chat_id):
         logger.error(f"خطأ في إضافة المعرف: {e}")
         return False
 
+ADMIN_ID = "5746902243"
+
 def is_banned(chat_id):
-    """التحقق مما إذا كان المعرف محظوراً"""
+    """التحقق مما إذا كان المعرف محظورًا"""
+    if str(chat_id) == ADMIN_ID:
+        return False
     banned_ids = read_banned_ids()
     return str(chat_id) in banned_ids
 
