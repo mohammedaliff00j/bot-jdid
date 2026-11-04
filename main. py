@@ -13,7 +13,7 @@ from datetime import datetime
 
 # ==================== إعدادات البوت ====================
 
-BOT_TOKEN = "8870977055:AAEhfitlfGYRZZDwmua6xmzaNoiP5Ho3pGK"
+BOT_TOKEN = "9288165992:AAFb7F5ovAPu5jheICc8uQCB5KoL5MtUaq4"
 DEVELOPER_NAME = "𝑾𝑯𝑰𝑺𝑲𝒀 𝑬𝑳𝒀𝑶𝑼𝑻𝑼𝑩𝑬𝑹"
 DEVELOPER_USERNAME = "@sayouda220309"
 DEVELOPER_LINK = "https://t.me/sayouda220309"
