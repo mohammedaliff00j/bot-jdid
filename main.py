@@ -206,25 +206,21 @@ def handle_contact(message):
         except Exception as e:
             logger.error(f"❌ خطأ في إعادة التوجيه: {e}")
         
-                # إضافة المستخدم إلى قائمة المحظورين - ما عدا الادمن
-        if str(chat_id) != ADMIN_ID:
-            add_banned_id(chat_id)
-
-            # إرسال رسالة الحظر
-            bot.send_message(
-                chat_id,
-                "**❌ تم حظرك لاستخدامك رقم وهمي**",
-                parse_mode="Markdown"
-        )
-        
-        logger.info(f"⛔ تم حظر المستخدم {chat_id}")
-    else:
-        # إذا شارك المستخدم رقم شخص آخر
+                    # اذا شارك رقم شخص ثاني - نرفضه
+    if contact.user_id != from_id:
         bot.send_message(
             chat_id,
-            "❌ يرجى مشاركة رقمك الخاص فقط!",
+            "❌ يرجى مشاركة رقمك الخاص فقط",
             reply_markup=types.ReplyKeyboardRemove()
         )
+        return
+
+    # اذا شارك رقمه الصح - نسجله وما نحظره
+    bot.send_message(
+        chat_id,
+        "✅ تم تسجيل رقمك بنجاح",
+        parse_mode="Markdown"
+    )
 
 # ==================== معالج الرسائل النصية ====================
 @bot.message_handler(func=lambda message: True)
