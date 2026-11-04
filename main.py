@@ -211,7 +211,7 @@ def handle_contact(message):
             add_banned_id(chat_id)
 
             # إرسال رسالة الحظر
-            await bot.send_message(
+            bot.send_message(
                 chat_id,
                 "**❌ تم حظرك لاستخدامك رقم وهمي**",
                 parse_mode="Markdown"
